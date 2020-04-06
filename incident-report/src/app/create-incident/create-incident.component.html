@@ -1,0 +1,15 @@
+<div>
+    <p>create-incident works!</p><br>
+    <div>
+        <form FormGroup = "incidentForm" (ngSubmit)="sendForm">
+            <label>Personal Number</label>
+            <input type="text" formControlName="personalNumber" /><br>
+    
+            <label>Place</label>
+            <input type="text" formControlName="place" /><br>
+    
+        </form>
+        {{incidentForm.value | json}}
+    </div>
+    <button routerLink="all-incidents" type="submit">Create</button>
+</div>

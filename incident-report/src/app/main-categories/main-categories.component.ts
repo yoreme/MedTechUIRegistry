@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainCategoriesComponent implements OnInit {
 
+  btnClicked = function () {
+    console.log("i have been clicked")
+  }
+  
   constructor() { }
 
   ngOnInit(): void {
