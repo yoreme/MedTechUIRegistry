@@ -1,0 +1,4 @@
+<p>incident-list works!</p>
+<div *ngFor="let incident of incidents" (click)="incidentClicked(incident)">
+    <h3>{{incident.place}}</h3>
+</div>

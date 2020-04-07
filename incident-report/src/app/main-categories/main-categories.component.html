@@ -1,6 +1,67 @@
-<div>
-    <p>main-categories works!</p>
-    <button>Environment</button>
-    <button routerLink="create">Clinic</button>
-    <button (click)="btnClicked()">Environment</button>
-</div>
+<section class="hero is-fullheight">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          Incident Report
+        </h1>
+        <h2 class="subtitle">
+          Welcome to heros system reports please select categories below
+        </h2>
+
+        <!-- middle tiles -->
+        <div class="tile is-ancestor">
+            <div class="tile is-parent">
+              <article class="tile is-child box">
+                <fa-icon [icon]="faMapMarkedAlt" class="fa-10x "></fa-icon>
+                <p class="title">Environmental Case</p>
+                <p class="subtitle">use this section for cases related to Environmental issuers</p>
+                <button class="button is-info is-rounded">Environment</button>
+              </article>
+            </div>
+            <div class="tile is-parent">
+              <article class="tile is-child box ">
+                <fa-icon [icon]="faHospitalUser" class="fa-10x "></fa-icon>
+                <p class="title">Clinic</p>
+                <p class="subtitle">use this section for cases related to Environmental issuers</p>
+                <button routerLink="create" class="button is-info is-rounded">Clinic</button>
+              </article>
+            </div>
+            <div class="tile is-parent">
+              <article class="tile is-child box">
+                <fa-icon [icon]="faUserInjured" class="fa-10x "></fa-icon>
+                <p class="title">Patient</p>
+                <p class="subtitle">With some content use this section for cases related to Environmental issuers</p>
+                <button routerLink="create" class="button is-info is-rounded">Clinic</button>
+              </article>
+            </div>
+        </div>
+        <!-- ticket stats-->
+        <nav class="level is-mobile notification is-info">
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Created</p>
+                <p class="title">3,456</p>
+              </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Pending</p>
+                <p class="title">123</p>
+              </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Ongoing</p>
+                <p class="title">456</p>
+              </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Resolved</p>
+                <p class="title">789K</p>
+              </div>
+            </div>
+          </nav>
+      </div>
+    </div>
+</section>

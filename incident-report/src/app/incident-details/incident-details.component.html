@@ -1,0 +1,9 @@
+<p>incident-details works!</p>
+<div *ngIf="incident">
+    <h3>Incident Location: {{ incident.place }}</h3>
+    <p>Personal Number: {{ incident.personalNumber }}</p>
+    <p>Creation Time: {{ incident.time }}</p>
+    <p>Description: {{ incident.description }}</p>
+    <fa-icon [icon]="faMugHot"></fa-icon>
+    <p>Action: {{ incident.action }}</p>
+</div>

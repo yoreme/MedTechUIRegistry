@@ -9,7 +9,7 @@ const routes: Routes = [
   {path: '', component: MainCategoriesComponent},
   {path: 'create', component: CreateIncidentComponent},
   {path: 'create/all-incidents', component: AllIncidentComponent},
-  {path: 'all-incidents', component: AllIncidentComponent}
+  {path: 'all-incidents', component: AllIncidentComponent},
 ];
 
 @NgModule({

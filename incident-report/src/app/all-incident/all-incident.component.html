@@ -1,1 +1,4 @@
-<p>all-incident works!</p>
+<div class="layout">
+    <app-incident-list [incidents]="incidents" (selectIncident)="selectIncident($event)"></app-incident-list>
+    <app-incident-details [incident]="selectedIncident"></app-incident-details>
+</div>

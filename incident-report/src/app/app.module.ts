@@ -8,22 +8,40 @@ import { MainCategoriesComponent } from './main-categories/main-categories.compo
 import { AppRoutingModule } from './app-routing.module';
 import { CreateIncidentComponent } from './create-incident/create-incident.component';
 import { AllIncidentComponent } from './all-incident/all-incident.component';
+import { IncidentApiService } from './incident-api.service';
+import {IncidentListComponent} from './incident-list/incident-list.component';
+import {IncidentDetailsComponent} from './incident-details/incident-details.component';
+import { IncidentFormComponent } from './incident-form/incident-form.component';
+import { HttpClientModule } from '@angular/common/http';
+
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainCategoriesComponent,
     CreateIncidentComponent,
-    AllIncidentComponent
+    AllIncidentComponent,
+    IncidentDetailsComponent,
+    IncidentListComponent,
+    IncidentFormComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FontAwesomeModule
   ],
-  providers: [],
+  providers: [
+    IncidentApiService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import { IncidentApiService } from '../incident-api.service';
 
 @Component({
   selector: 'app-all-incident',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AllIncidentComponent implements OnInit {
 
-  constructor() { }
+  incidents: any = [];
+  selectedIncident = null;
 
-  ngOnInit(): void {
+  constructor(
+    private apiService: IncidentApiService
+  ) { }
+
+  ngOnInit() {
+    this.apiService.getIncidents().subscribe(
+      data => {
+        this.incidents = data;
+      },
+      error => console.log(error)
+    )
+  }
+
+  selectIncident(incident) {
+    this.selectedIncident = incident;
+    console.log('SelectedIncident', this.selectedIncident );
   }
 
 }
