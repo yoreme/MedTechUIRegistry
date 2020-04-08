@@ -1,77 +1,90 @@
 <section class="section section-padding-medium">
     <div class="container">
-        <form [formGroup]="incidentForm" (ngSubmit)="sendForm()">
-            <div class="field">
-                <label class="label">Category</label>
-                <div class="control">
-                <input class="input" type="text" placeholder="Text input">
+        <p class="title">Patient</p>
+        <p class="subtitle">With some content use this section for cases related to Environmental issuers</p>
+    </div>
+</section>
+<section class="section section-padding-medium">
+    <div class="container">
+        <div class="tile is-ancestor">
+            <div class="tile is-parent">
+                <div class="tile is-child box">
+                    <form [formGroup]="incidentForm" (ngSubmit)="sendForm()">
+                        <div class="field">
+                            <label class="label">personal Number</label>
+                            <div class="control has-icons-left has-icons-right">
+                            <input class="input is-success" type="text" placeholder="Text input" value="19810812-2192">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-user"></i>
+                            </span>
+                            <span class="icon is-small is-right">
+                                <i class="fas fa-check"></i>
+                            </span>
+                            </div>
+                            <p class="help is-success">This username is available</p>
+                        </div>
+                        
+                        <div class="field">
+                            <label class="label">Time</label>
+                            <div class="control has-icons-left has-icons-right">
+                            <input class="input is-danger" type="email" placeholder="Email input" value="hello@">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                            <span class="icon is-small is-right">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </span>
+                            </div>
+                            <p class="help is-danger">This email is invalid</p>
+                        </div>
+                        
+                        <div class="field">
+                            <label class="label">Category</label>
+                            <div class="control">
+                            <div class="select">
+                                <select>
+                                <option>Select dropdown</option>
+                                <option>With options</option>
+                                </select>
+                            </div>
+                            </div>
+                        </div>
+                        
+                        <div class="field">
+                            <label class="label">Description</label>
+                            <div class="control">
+                            <textarea class="textarea" placeholder="Textarea"></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="field">
+                            <div class="control">
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                I agree to the provided Category<a href="#">terms and conditions</a>
+                            </label>
+                            </div>
+                        </div>
+                        
+                        <div class="field is-grouped">
+                            <div class="control">
+                            <button class="button is-link" type="submit">Submit</button>
+                            </div>
+                            <div class="control">
+                            <button class="button is-link is-light">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
-            
-            <div class="field">
-                <label class="label">personal Number</label>
-                <div class="control has-icons-left has-icons-right">
-                <input class="input is-success" type="text" placeholder="Text input" value="19810812-2192">
-                <span class="icon is-small is-left">
-                    <i class="fas fa-user"></i>
-                </span>
-                <span class="icon is-small is-right">
-                    <i class="fas fa-check"></i>
-                </span>
-                </div>
-                <p class="help is-success">This username is available</p>
-            </div>
-            
-            <div class="field">
-                <label class="label">Time</label>
-                <div class="control has-icons-left has-icons-right">
-                <input class="input is-danger" type="email" placeholder="Email input" value="hello@">
-                <span class="icon is-small is-left">
-                    <i class="fas fa-envelope"></i>
-                </span>
-                <span class="icon is-small is-right">
-                    <i class="fas fa-exclamation-triangle"></i>
-                </span>
-                </div>
-                <p class="help is-danger">This email is invalid</p>
-            </div>
-            
-            <div class="field">
-                <label class="label">Category</label>
-                <div class="control">
-                <div class="select">
-                    <select>
-                    <option>Select dropdown</option>
-                    <option>With options</option>
-                    </select>
-                </div>
+            <div class="tile is-parent">
+                <div class="tile is-child box">
+                <p class="title">Category with word cloud</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut. Morbi maximus, leo sit amet vehicula eleifend, nunc dui porta orci, quis semper odio felis ut quam.</p>
+                <p>Suspendisse varius ligula in molestie lacinia. Maecenas varius eget ligula a sagittis. Pellentesque interdum, nisl nec interdum maximus, augue diam porttitor lorem, et sollicitudin felis neque sit amet erat. Maecenas imperdiet felis nisi, fringilla luctus felis hendrerit sit amet. Aenean vitae gravida diam, finibus dignissim turpis. Sed eget varius ligula, at volutpat tortor.</p>
+                <p>Integer sollicitudin, tortor a mattis commodo, velit urna rhoncus erat, vitae congue lectus dolor consequat libero. Donec leo ligula, maximus et pellentesque sed, gravida a metus. Cras ullamcorper a nunc ac porta. Aliquam ut aliquet lacus, quis faucibus libero. Quisque non semper leo.</p>
                 </div>
             </div>
-            
-            <div class="field">
-                <label class="label">Description</label>
-                <div class="control">
-                <textarea class="textarea" placeholder="Textarea"></textarea>
-                </div>
-            </div>
-            
-            <div class="field">
-                <div class="control">
-                <label class="checkbox">
-                    <input type="checkbox">
-                    I agree to the provided Category<a href="#">terms and conditions</a>
-                </label>
-                </div>
-            </div>
-            
-            <div class="field is-grouped">
-                <div class="control">
-                <button class="button is-link" type="submit">Submit</button>
-                </div>
-                <div class="control">
-                <button class="button is-link is-light">Cancel</button>
-                </div>
-            </div>
-        </form>
+        </div>
     </div>
 </section>

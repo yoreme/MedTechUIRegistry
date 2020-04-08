@@ -1,4 +1,19 @@
 <p>incident-list works!</p>
-<div *ngFor="let incident of incidents" (click)="incidentClicked(incident)">
-    <h3>{{incident.place}}</h3>
-</div>
+
+
+<table class="table is-striped" >
+    <thead>
+      <tr>
+        <th><abbr>Location</abbr></th>
+        <th>Date</th>
+        <th><abbr >Action</abbr></th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let incident of incidents" (click)="incidentClicked(incident)">
+          <th>{{incident.place}}</th>
+          <td>{{incident.time}}</td>
+          <td>{{incident.action}}</td>
+          </tr>
+    </tbody>
+</table>

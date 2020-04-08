@@ -1,4 +1,53 @@
-<div class="layout">
-    <app-incident-list [incidents]="incidents" (selectIncident)="selectIncident($event)"></app-incident-list>
-    <app-incident-details [incident]="selectedIncident"></app-incident-details>
-</div>
+<section class="hero ">
+    <div class="hero-body">
+        <div class="container">
+            <nav class="level is-mobile">
+                <div class="level-item has-text-centered">
+                  <div>
+                    <fa-icon [icon]="faExclamationTriangle" class="fa-4x has-text-warning"></fa-icon>
+                    <p class="heading">My Incidents</p>
+                    <p class="title">3,456</p>
+                  </div>
+                </div>
+                <div class="level-item has-text-centered">
+                  <div>
+                    <fa-icon [icon]="faSpinner" class="fa-4x has-text-link"></fa-icon>
+                    <p class="heading">pending</p>
+                    <p class="title">123</p>
+                  </div>
+                </div>
+                <div class="level-item has-text-centered">
+                  <div>
+                    <fa-icon [icon]="faSync" class="fa-4x has-text-primary"></fa-icon>
+                    <p class="heading">Ongoing</p>
+                    <p class="title">456K</p>
+                  </div>
+                </div>
+                <div class="level-item has-text-centered">
+                  <div>
+                    <fa-icon [icon]="faCheckCircle" class="fa-4x has-text-success"></fa-icon>
+                    <p class="heading">Resolved</p>
+                    <p class="title">789</p>
+                  </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="section section-padding-medium">
+    <div class="container">
+        <div class="tile is-ancestor">
+            <div class="tile is-parent">
+                <div class="tile is-child box">
+                    <app-incident-list [incidents]="incidents" (selectIncident)="selectIncident($event)"></app-incident-list>
+                </div>
+            </div>
+            <div class="tile is-parent">
+                <div class="tile is-child box">
+                    <app-incident-details [incident]="selectedIncident"></app-incident-details>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

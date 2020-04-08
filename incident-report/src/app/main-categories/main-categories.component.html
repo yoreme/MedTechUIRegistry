@@ -1,18 +1,47 @@
-<section class="hero is-fullheight">
+<section class="hero has-background-white-ter">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                Incident Report
+            </h1>
+            <h2 class="subtitle">
+                Welcome to heros system reports please select categories below
+            </h2>
+        </div>
+        <!-- Left side -->
+        <div class="level-right">
+            <div class="level-item">
+                <p class="subtitle is-5">
+                    <strong>123</strong> reports
+                </p>
+            </div>
+            <div class="level-item">
+            <div class="field has-addons">
+                <p class="control">
+                <input class="input" type="text" placeholder="Find a post">
+                </p>
+                <p class="control">
+                <button class="button">
+                    Search
+                </button>
+                </p>
+            </div>
+            </div>
+        </div>
+        <div class="container">
+            
+        </div>
+    </div>
+</section>
+    <section class="hero is-fullheight">
     <div class="hero-body">
       <div class="container">
-        <h1 class="title">
-          Incident Report
-        </h1>
-        <h2 class="subtitle">
-          Welcome to heros system reports please select categories below
-        </h2>
 
         <!-- middle tiles -->
         <div class="tile is-ancestor">
             <div class="tile is-parent">
               <article class="tile is-child box">
-                <fa-icon [icon]="faMapMarkedAlt" class="fa-10x "></fa-icon>
+                <fa-icon [icon]="faMapMarkedAlt" class="fa-10x has-text-link"></fa-icon>
                 <p class="title">Environmental Case</p>
                 <p class="subtitle">use this section for cases related to Environmental issuers</p>
                 <button class="button is-info is-rounded">Environment</button>
@@ -20,7 +49,7 @@
             </div>
             <div class="tile is-parent">
               <article class="tile is-child box ">
-                <fa-icon [icon]="faHospitalUser" class="fa-10x "></fa-icon>
+                <fa-icon [icon]="faHospitalUser" class="fa-10x has-text-link"></fa-icon>
                 <p class="title">Clinic</p>
                 <p class="subtitle">use this section for cases related to Environmental issuers</p>
                 <button routerLink="create" class="button is-info is-rounded">Clinic</button>
@@ -28,7 +57,7 @@
             </div>
             <div class="tile is-parent">
               <article class="tile is-child box">
-                <fa-icon [icon]="faUserInjured" class="fa-10x "></fa-icon>
+                <fa-icon [icon]="faUserInjured" class="fa-10x has-text-link"></fa-icon>
                 <p class="title">Patient</p>
                 <p class="subtitle">With some content use this section for cases related to Environmental issuers</p>
                 <button routerLink="create" class="button is-info is-rounded">Clinic</button>
@@ -36,7 +65,7 @@
             </div>
         </div>
         <!-- ticket stats-->
-        <nav class="level is-mobile notification is-info">
+        <nav class="level is-mobile notification has-background-white-ter">
             <div class="level-item has-text-centered">
               <div>
                 <p class="heading">Created</p>

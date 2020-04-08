@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { IncidentApiService } from '../incident-api.service';
+import { faExclamationTriangle, faSpinner, faSync, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-all-incident',
@@ -10,6 +11,11 @@ export class AllIncidentComponent implements OnInit {
 
   incidents: any = [];
   selectedIncident = null;
+
+  faExclamationTriangle = faExclamationTriangle;
+  faSpinner = faSpinner;
+  faSync = faSync;
+  faCheckCircle = faCheckCircle;
 
   constructor(
     private apiService: IncidentApiService
