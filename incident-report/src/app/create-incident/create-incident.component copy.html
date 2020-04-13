@@ -1,0 +1,168 @@
+<section class="section section-padding-medium">
+    <div class="container">
+        <p class="title">Patient</p>
+        <p class="subtitle">With some content use this section for cases related to Environmental issuers</p>
+    </div>
+</section>
+<section class="section section-padding-medium">
+    <div class="container">
+                <form [formGroup]="incidentForm" (ngSubmit)="sendForm()" >
+                    <div class="columns">
+                        <div class="column is-one-fifth">
+                            <div class="control">
+                                <label class="label">Incident Priority</label>
+                                <mat-radio-group aria-label="Select an option">
+                                    <mat-radio-button value="1">Risk</mat-radio-button><br>
+                                    <mat-radio-button value="2">Tillbud</mat-radio-button><br>
+                                    <mat-radio-button value="2">Negetive Incident</mat-radio-button><br>
+                                </mat-radio-group>
+                            </div>
+
+                            <div class="control">
+                                <label class="label">Patient Sex</label>
+                                <label class="radio">
+                                  <input type="radio" name="rsvp">
+                                  Male
+                                </label><br>
+                                <label class="radio">
+                                  <input type="radio" name="rsvp">
+                                  Female
+                                </label><br>
+                                <label class="radio" disabled>
+                                  <input type="radio" name="rsvp" disabled>
+                                  Binary
+                                </label>
+                            </div>
+
+                            <div class="control">
+                                <label class="label">Suggestions:</label>
+                                <label class="radio">
+                                  <input type="radio" name="rsvp">
+                                  Yes
+                                </label><br>
+                                <label class="radio">
+                                  <input type="radio" name="rsvp">
+                                  No
+                                </label>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="field">
+                                <label class="label">Incident Reporter</label>
+                                <div class="control">
+                                    <div class="select">
+                                        <select>
+                                        <option>My Self (current logged In user)</option>
+                                        <option>With options</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Personal Number</label>
+                                <div class="control has-icons-left has-icons-right">
+                                    <input class="input is-success" type="text" placeholder="Personal Number" formControlName="personalNumber">
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-user"></i>
+                                    </span>
+                                    <span class="icon is-small is-right">
+                                        <i class="fas fa-check"></i>
+                                    </span>
+                                </div>
+                                <p class="help is-success">This personal Number is valid</p>
+                            </div>
+        
+                            <div class="field">
+                                <label class="label">Location:</label>
+                                <div class="control has-icons-left has-icons-right">
+                                <input class="input is-success" type="text" placeholder="Location" formControlName="place">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-user"></i>
+                                </span>
+                                <span class="icon is-small is-right">
+                                    <i class="fas fa-check"></i>
+                                </span>
+                                </div>
+                                <p class="help is-success">This username is available</p>
+                            </div>
+    
+                            <div class="field">
+                                <label class="label">Time of Incident:</label>
+                                <div class="control has-icons-left has-icons-right">
+                                <input class="input is-success" type="text" placeholder="Date" formControlName="place">
+
+                                <mat-form-field>
+                                    <mat-label>Angular forms (w/ deserialization)</mat-label>
+                                    <input matInput [matDatepicker]="picker2"
+                                           [formControl]="serializedDate">
+                                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker2></mat-datepicker>
+                                </mat-form-field>
+
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-user"></i>
+                                </span>
+                                <span class="icon is-small is-right">
+                                    <i class="fas fa-check"></i>
+                                </span>
+                                </div>
+                                <p class="help is-success">This username is available</p>
+                            </div>
+
+                            <div class="field">
+                                <label class="label">Action</label>
+                                <div class="control has-icons-left has-icons-right">
+                                <input class="input is-danger" type="email" placeholder="Email input" formControlName="action">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-envelope"></i>
+                                </span>
+                                <span class="icon is-small is-right">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </span>
+                                </div>
+                                <p class="help is-danger">This email is invalid</p>
+                            </div>
+                            <div class="field">
+                                <div class="control">
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    I agree to the provided Category<a href="#">terms and conditions</a>
+                                </label>
+                                </div>
+                            </div>
+                            
+                            <div class="field is-grouped">
+                                <div class="control">
+                                <button class="button is-link" type="submit">Submit</button>
+                                </div>
+                                <div class="control">
+                                <button class="button is-link is-light">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="column">
+                            <div class="field">
+                                <label class="label">Description</label>
+                                <div class="control">
+                                <textarea class="textarea" placeholder="Textarea" formControlName="description"></textarea>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Category</label>
+                                <div class="control">
+                                    <div class="select">
+                                        <select>
+                                        <option>Select dropdown</option>
+                                        <option>With options</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                </form>
+    </div>
+</section>

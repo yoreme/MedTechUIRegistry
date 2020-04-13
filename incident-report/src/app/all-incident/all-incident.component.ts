@@ -25,6 +25,8 @@ export class AllIncidentComponent implements OnInit {
     this.apiService.getIncidents().subscribe(
       data => {
         this.incidents = data;
+        this.incidents = this.incidents.results
+        console.log(this.incidents)
       },
       error => console.log(error)
     )

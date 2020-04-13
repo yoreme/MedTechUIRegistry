@@ -6,85 +6,50 @@
 </section>
 <section class="section section-padding-medium">
     <div class="container">
-        <div class="tile is-ancestor">
-            <div class="tile is-parent">
-                <div class="tile is-child box">
-                    <form [formGroup]="incidentForm" (ngSubmit)="sendForm()">
-                        <div class="field">
-                            <label class="label">personal Number</label>
-                            <div class="control has-icons-left has-icons-right">
-                            <input class="input is-success" type="text" placeholder="Text input" value="19810812-2192">
-                            <span class="icon is-small is-left">
-                                <i class="fas fa-user"></i>
-                            </span>
-                            <span class="icon is-small is-right">
-                                <i class="fas fa-check"></i>
-                            </span>
+                <form [formGroup]="incidentForm" (ngSubmit)="sendForm()" >
+                    <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+                        {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+                      </button>
+                      <mat-horizontal-stepper [linear]="isLinear" #stepper>
+                        <mat-step [stepControl]="firstFormGroup">
+                          <form [formGroup]="firstFormGroup">
+                            <ng-template matStepLabel>Fill out your name</ng-template>
+                            <mat-form-field>
+                              <mat-label>Name</mat-label>
+                              <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+                            </mat-form-field><br>
+                            <mat-form-field>
+                                <mat-label>test</mat-label>
+                                <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+                              </mat-form-field>
+                            <div>
+                              <button mat-button matStepperNext>Next</button>
                             </div>
-                            <p class="help is-success">This username is available</p>
-                        </div>
-                        
-                        <div class="field">
-                            <label class="label">Time</label>
-                            <div class="control has-icons-left has-icons-right">
-                            <input class="input is-danger" type="email" placeholder="Email input" value="hello@">
-                            <span class="icon is-small is-left">
-                                <i class="fas fa-envelope"></i>
-                            </span>
-                            <span class="icon is-small is-right">
-                                <i class="fas fa-exclamation-triangle"></i>
-                            </span>
+                          </form>
+                        </mat-step>
+                        <mat-step [stepControl]="secondFormGroup">
+                          <form [formGroup]="secondFormGroup">
+                            <ng-template matStepLabel>Fill out your address</ng-template>
+                            <mat-form-field>
+                              <mat-label>Address</mat-label>
+                              <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+                                     required>
+                            </mat-form-field>
+                            <div>
+                              <button mat-button matStepperPrevious>Back</button>
+                              <button mat-button matStepperNext>Next</button>
                             </div>
-                            <p class="help is-danger">This email is invalid</p>
-                        </div>
-                        
-                        <div class="field">
-                            <label class="label">Category</label>
-                            <div class="control">
-                            <div class="select">
-                                <select>
-                                <option>Select dropdown</option>
-                                <option>With options</option>
-                                </select>
-                            </div>
-                            </div>
-                        </div>
-                        
-                        <div class="field">
-                            <label class="label">Description</label>
-                            <div class="control">
-                            <textarea class="textarea" placeholder="Textarea"></textarea>
-                            </div>
-                        </div>
-                        
-                        <div class="field">
-                            <div class="control">
-                            <label class="checkbox">
-                                <input type="checkbox">
-                                I agree to the provided Category<a href="#">terms and conditions</a>
-                            </label>
-                            </div>
-                        </div>
-                        
-                        <div class="field is-grouped">
-                            <div class="control">
-                            <button class="button is-link" type="submit">Submit</button>
-                            </div>
-                            <div class="control">
-                            <button class="button is-link is-light">Cancel</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="tile is-parent">
-                <div class="tile is-child box">
-                <p class="title">Category with word cloud</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut. Morbi maximus, leo sit amet vehicula eleifend, nunc dui porta orci, quis semper odio felis ut quam.</p>
-                <p>Suspendisse varius ligula in molestie lacinia. Maecenas varius eget ligula a sagittis. Pellentesque interdum, nisl nec interdum maximus, augue diam porttitor lorem, et sollicitudin felis neque sit amet erat. Maecenas imperdiet felis nisi, fringilla luctus felis hendrerit sit amet. Aenean vitae gravida diam, finibus dignissim turpis. Sed eget varius ligula, at volutpat tortor.</p>
-                <p>Integer sollicitudin, tortor a mattis commodo, velit urna rhoncus erat, vitae congue lectus dolor consequat libero. Donec leo ligula, maximus et pellentesque sed, gravida a metus. Cras ullamcorper a nunc ac porta. Aliquam ut aliquet lacus, quis faucibus libero. Quisque non semper leo.</p>
-                </div>
-            </div>
-        </div>
+                          </form>
+                        </mat-step>
+                        <mat-step>
+                          <ng-template matStepLabel>Done</ng-template>
+                          <p>You are now done.</p>
+                          <div>
+                            <button mat-button matStepperPrevious>Back</button>
+                            <button mat-button (click)="stepper.reset()">Reset</button>
+                          </div>
+                        </mat-step>
+                      </mat-horizontal-stepper>
+                </form>
     </div>
 </section>

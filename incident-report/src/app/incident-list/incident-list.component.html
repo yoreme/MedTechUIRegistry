@@ -12,8 +12,8 @@
     <tbody>
         <tr *ngFor="let incident of incidents" (click)="incidentClicked(incident)">
           <th>{{incident.place}}</th>
-          <td>{{incident.time}}</td>
+          <td>{{incident.created_at}}</td>
           <td>{{incident.action}}</td>
-          </tr>
+        </tr>
     </tbody>
 </table>
