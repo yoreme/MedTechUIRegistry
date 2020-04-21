@@ -10,6 +10,8 @@ export class IncidentListComponent implements OnInit {
   @Input() incidents: any = []
   @Output() selectIncident = new EventEmitter();
 
+  panelOpenState = false;
+
   constructor() { }
 
 

@@ -1,55 +1,146 @@
-<section class="section section-padding-medium">
+<section class="section section-padding-medium mat-typography">
     <div class="container">
-        <p class="title">Patient</p>
-        <p class="subtitle">With some content use this section for cases related to Environmental issuers</p>
-    </div>
-</section>
-<section class="section section-padding-medium">
-    <div class="container">
-                <form [formGroup]="incidentForm" (ngSubmit)="sendForm()" >
-                    <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
-                        {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
-                      </button>
-                      <mat-horizontal-stepper [linear]="isLinear" #stepper>
-                        <mat-step [stepControl]="firstFormGroup">
-                          <form [formGroup]="firstFormGroup">
-                            <ng-template matStepLabel>Fill out your name</ng-template>
+        <!--<form [formGroup]="incidentForm" (ngSubmit)="sendForm()" > -->
+        <form [formGroup]="newIncidentForm" (ngSubmit)="sendForm()" >
+            <mat-list>
+                <mat-list-item headline >INCIDENT DETAILS</mat-list-item>
+                <mat-divider></mat-divider>
+            </mat-list>
+            <div class="columns is-desktop">
+                <div class="column">
+                    <mat-list>
+                        <label class="label">Inloggad</label>
+                        <mat-form-field>
+                            <mat-label>Name</mat-label>
+                            <input matInput placeholder="Last name, First name" [formControl]="personalNumberCtrl" required>
+                        </mat-form-field><br><br>
+                        <label class="label">Vem Är Uppgiftslämnare?</label>
+                        <mat-form-field>
+                            <mat-label>Vem Är Uppgiftslämnare?</mat-label>
+                            <mat-select [(value)]="selected">
+                                <mat-option value="option1">Jag själv (inoggad)</mat-option>
+                                <mat-option value="option2">Others</mat-option>
+                                </mat-select>
+                        </mat-form-field>
+                    </mat-list>
+                </div>
+
+                <div class="column">
+                    <mat-list>
+                        <label class="label">Organisation Enhet</label><br>
+                        <mat-form-field>
+                            <mat-label>Organisation Enhet</mat-label>
+                            <input matInput placeholder="Last name, First name" [formControl]="placeCtrl" required>
+                        </mat-form-field><br><br>
+                        <!-- Description area-->
+                        <label class="label">Tidsintervall</label><br>
+                        <mat-form-field>
+                            <mat-label>Tidsintervall</mat-label>
+                            <input matInput placeholder="Last name, First name" [formControl]="personalNumberCtrl" required>
+                        </mat-form-field>
+                    </mat-list>
+                </div>
+
+                <div class="column">
+                    <mat-list>
+                        <label class="label">Vad Avser Rapporten?</label><br>
+                        <mat-radio-group aria-label="Select an option" [formControl]="incident_typeCtrl">
+                            <mat-radio-button value="Risk" (change)="onActionChange($event)">Risk</mat-radio-button>
+                            <mat-radio-button value="Tillbud" (change)="onActionChange($event)">Tillbud</mat-radio-button>
+                            <mat-radio-button value="Negetive Incident" (change)="onActionChange($event)">Negetive Incident</mat-radio-button>
+                        </mat-radio-group><br><br><br>
+                        <!-- Description area-->
+                        <label class="label">Datum</label>
+                        <mat-form-field>
+                            <mat-label>Angular forms (w/ deserialization)</mat-label>
+                            <input matInput [matDatepicker]="picker2"
+                                    [formControl]="incident_dateCtrl" >
+                            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                            <mat-datepicker #picker2></mat-datepicker>
+                        </mat-form-field><br><br>
+                    </mat-list>
+                </div>
+            </div>
+
+            <!--patient step-->
+            <mat-list>
+                <mat-list-item headline >PATIENT DETAILS</mat-list-item>
+                <mat-divider></mat-divider>
+            </mat-list>
+            <div class="columns is-desktop">
+                <div class="column">
+                        <mat-list>
+                            <label class="label">Personal Number</label>
                             <mat-form-field>
-                              <mat-label>Name</mat-label>
-                              <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-                            </mat-form-field><br>
-                            <mat-form-field>
-                                <mat-label>test</mat-label>
-                                <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-                              </mat-form-field>
-                            <div>
-                              <button mat-button matStepperNext>Next</button>
-                            </div>
-                          </form>
-                        </mat-step>
-                        <mat-step [stepControl]="secondFormGroup">
-                          <form [formGroup]="secondFormGroup">
-                            <ng-template matStepLabel>Fill out your address</ng-template>
-                            <mat-form-field>
-                              <mat-label>Address</mat-label>
-                              <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
-                                     required>
+                                <mat-label>Personal Number</mat-label>
+                                <input matInput [formControl]="personalNumberCtrl" placeholder="881022-3652"
+                                       required>
                             </mat-form-field>
-                            <div>
-                              <button mat-button matStepperPrevious>Back</button>
-                              <button mat-button matStepperNext>Next</button>
-                            </div>
-                          </form>
-                        </mat-step>
-                        <mat-step>
-                          <ng-template matStepLabel>Done</ng-template>
-                          <p>You are now done.</p>
-                          <div>
-                            <button mat-button matStepperPrevious>Back</button>
-                            <button mat-button (click)="stepper.reset()">Reset</button>
-                          </div>
-                        </mat-step>
-                      </mat-horizontal-stepper>
-                </form>
+
+                            <label class="label">Efternamn, Fornamn</label>
+                            <mat-form-field>
+                                <mat-label>Efternamn, Fornamn</mat-label>
+                                <input matInput [formControl]="patient_firstnameCtrl" placeholder="John Smith"
+                                       required>
+                            </mat-form-field>
+                            <br><br>
+                            <label class="label">Patient Sex</label>
+                            <mat-radio-group aria-label="Select an option" [formControl]="patient_sexCtrl">
+                                <mat-radio-button value="Male">Male</mat-radio-button>
+                                <mat-radio-button value="Female">Female</mat-radio-button>
+                                <mat-radio-button value="Binary">Binary</mat-radio-button>
+                            </mat-radio-group>
+                        </mat-list>
+                </div>
+
+                <div class="column">
+                        <mat-list style="left: calc((33.3333% - 0.666667px + 1px) * 1); width: calc((99.3333% - 0.666667px) * 1 + 0px)">
+                            <!-- Description area-->
+                            <label class="label">Beskriv Händelseförloppet</label>
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Leave a description of your incident</mat-label>
+                                <textarea matInput placeholder="Ex. It makes me feel..." rows="13" formControlName="description"></textarea>
+                            </mat-form-field>
+                        </mat-list>
+                </div>
+
+                <div class="column">
+                        <mat-list>
+                            <label class="label">Action Taken</label>
+                            <mat-radio-group aria-label="Select an option">
+                                <mat-radio-button #actionTaken value="action_taken" (change)="onChange($event)">Yes</mat-radio-button>
+                                <mat-radio-button value="2" [checked]="isChecked">No</mat-radio-button>
+                            </mat-radio-group><br><br>
+                            <mat-form-field *ngIf="actionTaken.checked" class="example-full-width">
+                                <mat-label>Leave a description of your incident</mat-label>
+                                <textarea matInput placeholder="Ex. It makes me feel..." [formControl]="actionCtrl" ></textarea>
+                            </mat-form-field>
+                            <br>
+                            <!--Suggestion sections-->
+                            <label class="label">Suggestions</label>
+                            <mat-radio-group aria-label="Select an option">
+                                <mat-radio-button #suggestions value="suggestions" (change)="onChange($event)">Yes</mat-radio-button>
+                                <mat-radio-button value="2" [checked]="isChecked">No</mat-radio-button>
+                            </mat-radio-group>
+                            <mat-form-field *ngIf="suggestions.checked" class="example-full-width">
+                                <mat-label>Leave a description of your incident</mat-label>
+                                <textarea matInput placeholder="Ex. It makes me feel..." [formControl]="suggestionCtrl"></textarea>
+                            </mat-form-field>
+                            <br><br>
+                        </mat-list>
+                </div>
+            </div>
+            <div class="columns is-desktop">
+                <div class="column">
+                    <mat-divider></mat-divider>
+                    <div class="example-button-row-confirmation">
+                        <div class="example-button-row">
+                          <button mat-raised-button >Back</button>
+                          <button mat-raised-button color="primary" type="submit">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>    
     </div>
 </section>

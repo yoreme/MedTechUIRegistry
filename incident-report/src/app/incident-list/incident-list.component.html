@@ -1,4 +1,4 @@
-<p>incident-list works!</p>
+<!-- <p>incident-list works!</p>
 
 
 <table class="table is-striped" >
@@ -16,4 +16,31 @@
           <td>{{incident.action}}</td>
         </tr>
     </tbody>
-</table>
+</table> -->
+
+<section class="section section-padding-medium mat-typography">
+  <div class="container">
+    <mat-list>
+      <mat-list-item headline >LIST OF INCIDENTS</mat-list-item>
+      <mat-divider></mat-divider>
+    </mat-list>
+  </div>
+</section>
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Location
+      </mat-panel-title>
+      <mat-panel-title>
+        Status
+      </mat-panel-title>
+      <mat-panel-description>
+        Description
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <p>I'm visible because I am open</p>
+    <p></p>
+  </mat-expansion-panel>
+</mat-accordion>

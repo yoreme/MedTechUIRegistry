@@ -4,28 +4,28 @@
             <nav class="level is-mobile">
                 <div class="level-item has-text-centered">
                   <div>
-                    <fa-icon [icon]="faExclamationTriangle" class="fa-4x has-text-warning"></fa-icon>
+                    <fa-icon [icon]="faExclamationTriangle" class="fa-3x "></fa-icon>
                     <p class="heading">My Incidents</p>
-                    <p class="title">3,456</p>
+                    <p class="title">3</p>
                   </div>
                 </div>
                 <div class="level-item has-text-centered">
                   <div>
-                    <fa-icon [icon]="faSpinner" class="fa-4x has-text-link"></fa-icon>
+                    <fa-icon [icon]="faSpinner" class="fa-3x "></fa-icon>
                     <p class="heading">pending</p>
-                    <p class="title">123</p>
+                    <p class="title">12</p>
                   </div>
                 </div>
                 <div class="level-item has-text-centered">
                   <div>
-                    <fa-icon [icon]="faSync" class="fa-4x has-text-primary"></fa-icon>
+                    <fa-icon [icon]="faSync" class="fa-3x "></fa-icon>
                     <p class="heading">Ongoing</p>
-                    <p class="title">456K</p>
+                    <p class="title">45</p>
                   </div>
                 </div>
                 <div class="level-item has-text-centered">
                   <div>
-                    <fa-icon [icon]="faCheckCircle" class="fa-4x has-text-success"></fa-icon>
+                    <fa-icon [icon]="faCheckCircle" class="fa-3x "></fa-icon>
                     <p class="heading">Resolved</p>
                     <p class="title">789</p>
                   </div>
@@ -43,11 +43,11 @@
                     <app-incident-list [incidents]="incidents" (selectIncident)="selectIncident($event)"></app-incident-list>
                 </div>
             </div>
-            <div class="tile is-parent">
+            <!--<div class="tile is-parent">
                 <div class="tile is-child box">
                     <app-incident-details [incident]="selectedIncident"></app-incident-details>
                 </div>
-            </div>
+            </div>-->
         </div>
     </div>
 </section>

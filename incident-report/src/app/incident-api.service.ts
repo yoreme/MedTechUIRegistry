@@ -26,10 +26,18 @@ export class IncidentApiService {
 
   createIncidents(createIncident){
     console.log(createIncident.value.personalNumber)
-    const body = JSON.stringify({place: createIncident.value.place, 
+    const body = JSON.stringify({
+      place: createIncident.value.place, 
       personal_number: createIncident.value.personalNumber,
+      patient_firstname: createIncident.value.patient_firstname,
+      patient_lastname: createIncident.value.patient_lastname,
+      suggestion: createIncident.value.suggestion,
       description: createIncident.value.description,
-      action: createIncident.value.action
+      action: createIncident.value.action,
+      incident_type: createIncident.value.incident_type,
+      incident_date: createIncident.value.incident_date,
+      patient_sex: createIncident.value.patient_sex,
+
     });
     return this.httpClient.post(`${this.baseUrl}create/`, body, {headers: this.headers});
   }

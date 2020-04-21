@@ -13,3 +13,30 @@ margin-left: 16px;
 .mat-form-field {
     margin-top: 16px;
 }
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+  .example-button-row button,
+  .example-button-row a {
+    margin-right: 10px;
+    margin-top: 30px;
+  }
+
+  .example-button-row-confirmation {
+    text-align: center;
+  }
+
+  .confirmation-text {
+    margin: auto;
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
